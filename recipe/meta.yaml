@@ -1,5 +1,5 @@
 {% set name = "ofiber" %}
-{% set version = "0.7.1" %}
+{% set version = "0.8.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/ofiber-{{ version }}.tar.gz
-  sha256: d9a5b814ce72e9daf7b4792744734e6d201a4093e0f3193d0032e5e361af7856
+  sha256: cabd7bc2f6de5b7ded17d1f8ad1daeed1d9e797abf5ebb457e62d1d54fe32aa2
 
 build:
   noarch: python
