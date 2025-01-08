@@ -6,22 +6,22 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/ofiber-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/ofiber-{{ version }}.tar.gz
   sha256: 860bc58aba6290fbb89d0ee135976243d4d564eaf87b8fd8a2ca85e0a0d95318
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
     - pip
-    - python >=3.7
+    - python {{ python_min }}
     - setuptools >=44
   run:
     - pip
-    - python >=3.7
+    - python >={{ python_min }}
     - matplotlib-base
     - numpy
     - scipy
@@ -33,6 +33,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/scottprahl/ofiber
